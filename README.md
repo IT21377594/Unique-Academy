@@ -3,7 +3,7 @@ Please go under edit and edit this file as needed for your project
 # Project Name - Institute Management System of Unique academy 
 # Batch - B08
 ### Group Leader - IT21329760 - Nanayakkara N.W.B.S (IT21329760)
-### Member 2 - 
+### Member 2 - IT21356636 - Perera P.K.L (IT21356636) 
 ### Member 3 - 
 ### Member 4 - 
 ### Member 5 - 

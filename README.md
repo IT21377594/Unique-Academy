@@ -1,8 +1,8 @@
 Please go under edit and edit this file as needed for your project
 
-# Project Name - 
-# Batch - 
-### Group Leader - IT20212232 - Mr. Asiri Gamage (asiriRepos)
+# Project Name - Institute Management System of Unique academy 
+# Batch - B08
+### Group Leader - IT21329760 - Nanayakkara N.W.B.S (IT21329760)
 ### Member 2 - 
 ### Member 3 - 
 ### Member 4 - 
@@ -11,8 +11,8 @@ Please go under edit and edit this file as needed for your project
 ### Member 7 - 
 ### Member 8 - 
 
-#### Brief Description of Project - 
-#### Technologies used - 
+#### Brief Description of Project - This project primarily focused on the management of Students, Teachers, Parents, Marketing director, Accountant, and the Staff Members with accurate and concurrently and this system helps to manage their activities easily. Also, this system provides convenience to the administrator by handling a database without any manual to store the data of every student and teacher entering the institute. In this project our objective is to improve their learning, teaching process and shift those methods and procedures to a computer-based web application. Also, by building the system more secure and more accurate, they can use this software anytime with authentication and authorization. This web application facilitates the efficiency and effectiveness of communication and collaboration between students, teachers, and parents. By using this system, educational Institute can quickly and easily develop creative, interactive, and user-friendly experiences tailored to their specific needs. So, this system is more secure and more accurate than humanoid workflows.
+#### Technologies used - JavaScript | j Query | Bootstrap | Laravel (PHP) | MySQL | High chart
 
 Note - The student's github account should be given in brackets e.g. (asiriRepos), this ideally should be your student id 
 

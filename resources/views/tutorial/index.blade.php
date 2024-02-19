@@ -25,7 +25,7 @@
                     <div class="col">
                         <a href="{{ url()->current() }}" class="btn btn-secondary" type="button">Reset</a>
                         <button class="btn btn-primary float-right" type="submit">Search</button>
-                        {{-- <a href="{{ route('employee.export') }}" class="btn btn-info mr-2 float-right" type="button">Export Employees</a> --}}
+                        <a href="{{ route('tutorial.export') }}" class="btn btn-info mr-2 float-right" type="button">Export Tutorial</a>
                     </div>
                 </div>
             </div>
@@ -56,8 +56,8 @@
                         <td><a href="{{url('storage/'.$tute->item)}}">{{ $tute->subject }}</a></td>
 
                         <td>
-                            <a href="{{ route('tutorial.show', ['id' => $tute->id]) }}"
-                                class="btn btn-info">View</a>
+                            {{-- <a href="{{ route('tutorial.show', ['id' => $tute->id]) }}"
+                                class="btn btn-info">View</a> --}}
                             <a href="{{ route('tutorial.edit', ['id' => $tute->id]) }}"
                                 class="btn btn-warning">Edit</a>
                                 <a href="{{ route('tutorial.destroy', ['tutorial' => $tute->id]) }}"

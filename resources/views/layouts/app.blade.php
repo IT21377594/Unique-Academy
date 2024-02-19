@@ -182,7 +182,7 @@
               </a>
             </li>
             @endif
-            @if (in_array(auth()->user()->user_role, ["ADMIN","STD"]))
+            @if (in_array(auth()->user()->user_role, ["ADMIN","MM"]))
             <li class="nav-item">
               <a href="/advertisement" class="nav-link">
                 <i class="nav-icon fas fa-circle"></i>
@@ -222,10 +222,10 @@
               </a>
             </li>
             @endif
-            @if (in_array(auth()->user()->user_role, ["ADMIN", "FF"]))
+            @if (in_array(auth()->user()->user_role, ["ADMIN"]))
             <li class="nav-item">
               <a href="{{route('specialdocument.index')}}" class="nav-link">
-                <i class="fa-sharp fa-solid fa-file fa-xs"></i>
+                <i class="nav-icon fas fa-circle"></i>
                 <p>
                  Special Document
                 </p>

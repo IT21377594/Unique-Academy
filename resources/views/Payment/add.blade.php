@@ -15,7 +15,7 @@
                             <label for="s_id" class="req_fld">StudentID</label>
                             {{-- <input class="form-control" type="text" name="s_id" value="{{ old('s_id') }}"> --}}
                             {{-- @error('s_id') --}}
-                                <span class="text-danger small">{{ $message }}</span>
+                                {{-- <span class="text-danger small">{{ $message }}</span> --}}
                             {{-- @enderror --}}
                         </div> -->
                         <div class="col-md-4 form-group">

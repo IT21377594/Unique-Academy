@@ -24,7 +24,9 @@ class SpecialDocument extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'date' => 'required|date|after:today'
+            'date' => 'required|date|after:today',
+            'name' => 'required',
+            'file' => 'required',
         ]);
         $file = $request->file('file');
         $file_name = $file->hashName();

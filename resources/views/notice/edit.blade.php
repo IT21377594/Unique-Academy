@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Edit Employee')
+@section('title', 'Edit Notice')
 @section('content')
 
 <div class="container-fluid">
@@ -47,7 +47,9 @@
                     </div>
                     <div class="col-md-4 form-group">
                         <label for="description" class="req_fld">Description</label>
-                        <input class="form-control" type="text" name="n_description" value="{{old('description', $not->n_description)}}">
+                        <textarea  rows="4" cols="50" name="n_description" value="{{old('description', $not->n_description)}}"  autocomplete="off">
+                        </textarea>
+                        {{-- <input class="form-control" type="text" name="n_description" value="{{old('description', $not->n_description)}}"> --}}
                         @error('address')
                         <span class="text-danger small">{{$message}}</span>
                         @enderror

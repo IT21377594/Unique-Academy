@@ -40,6 +40,20 @@ class TeacherController extends Controller
 
     public function store(Request $request)
     {
+
+        $request->validate([
+           
+            'name'=>'required',
+            'email'=>'required|email',
+            'password'=> ['required', 'regex:/^(?=.*[A-Z])(?=.*\d{7})[A-Z\d]+$/'], //password can only input one upper case and 7 numbers
+            'password_confirmation' => 'required|same:password',
+            'description'=>'required|min:5|max:100',
+            'subject'=>'required',
+            'grade'=>'required|numeric',
+            'phone' => ['required', 'regex:/^\d{10}$/'], //10 digit no
+            
+        ]);
+
         // dd($request->all());
         $emp = new User;
         $emp->name = $request->name;

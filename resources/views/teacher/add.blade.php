@@ -39,10 +39,16 @@
                         <div class="col-md-4 form-group">
                             <label for="password_confirmation" class="req_fld">Confirm Password</label>
                             <input class="form-control" type="password" name="password_confirmation">
+                            @error('password_confirmation')
+                            <span class="text-danger small">{{ $message }}</span>
+                          @enderror
                         </div>
                         <div class="col-md-4 form-group">
                             <label for="phone" class="req_fld">Mobile</label>
                             <input class="form-control" type="number" name="phone">
+                            @error('phone')
+                            <span class="text-danger small">{{ $message }}</span>
+                          @enderror
                         </div>
                         <div class="col-md-4 form-group">
                             <label for="address" class="req_fld">Address</label>
@@ -86,14 +92,23 @@
                         <div class="col-md-4 form-group">
                             <label for="description" class="req_fld">Description</label>
                             <input class="form-control" type="text" name="description">
+                            @error('description')
+                            <span class="text-danger small">{{ $message }}</span>
+                          @enderror
                         </div>
                         <div class="col-md-4 form-group">
                             <label for="subject" class="req_fld">Subject</label>
                             <input class="form-control" type="text" name="subject">
+                            @error('subject')
+                            <span class="text-danger small">{{ $message }}</span>
+                          @enderror
                         </div>
                         <div class="col-md-4 form-group">
                             <label for="grade" class="req_fld">Grade</label>
                             <input class="form-control" type="number" name="grade">
+                            @error('grade')
+                            <span class="text-danger small">{{ $message }}</span>
+                          @enderror
                         </div>
 
                     </div>

@@ -63,7 +63,7 @@
                         @error('birthday')
                         <span class="text-danger small">{{$message}}</span>
                         @enderror
-                    </div> --}}
+                    </div> 
 
                     <div class="col-md-4 form-group">
                         <label for="description" class="req_fld">Description</label>

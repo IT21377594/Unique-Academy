@@ -14,7 +14,7 @@
                         <div class="col-md-4 form-group">
                             <label for="subject" class="req_fld">subject</label>
                             <input class="form-control" type="text" name="subject" value="{{ old('name') }}">
-                            @error('name')
+                            @error('subject')
                                 <span class="text-danger small">{{ $message }}</span>
                             @enderror
                         </div>
@@ -22,12 +22,18 @@
                             <label for="date" class="req_fld">date</label>
                             <input class="form-control" type="date" name="date" value="{{ old('email') }}"
                                 autocomplete="off">
+                            @error('date')
+                                <span class="text-danger small">{{ $message }}</span>
+                            @enderror
 
                         </div>
 
                         <div class="col-md-4 form-group">
                             <label for="item" class="req_fld">item</label>
                             <input class="form-control" type="file" name="item">
+                        @error('item')
+                            <span class="text-danger small">{{ $message }}</span>
+                        @enderror
 
 
 

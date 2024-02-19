@@ -36,6 +36,13 @@ class EmailController extends Controller
     public function store(Request $request)
     {   
         //  dd($request->all());
+        $request->validate([
+            'email' => 'required|email|unique:emails,email',
+            'heading' => 'required',
+            'details' => 'required',
+
+        ]);
+
         $mail = new Email;
         $mail->email = $request->email;
         $mail->heading = $request->heading;

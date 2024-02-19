@@ -15,10 +15,10 @@
 <body class="hold-transition login-page"  >
 
     
-     {{-- <img src="{{'assets/img/1.jpg'}}"  style="position:absolute;" width="100%"> --}}
+     <img src="{{'assets/img/Background.jpg'}}"  style="position:absolute;" width="100%">
     <div class="login-box">
          {{-- <img src="{{'assets/img/1.jpg'}}"> --}}
-        <div class="card card-outline card-primary"  style="background-color: rgb(105, 105, 105);">
+        <div class="card card-outline card-primary"  style="background-color: rgb(209, 200, 200);">
             {{-- <img src="{{'assets/img/1.jpg'}}"> --}}
             <div class="card-header text-center" >
                 

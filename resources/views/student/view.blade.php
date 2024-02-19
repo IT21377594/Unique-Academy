@@ -49,10 +49,10 @@
                         <input type="hidden" name="id" value="{{$emp->id}}">
                         @if ($emp->status)
                         <input type="hidden" name="status" value="0">
-                        <button class="btn btn-danger float-right" type="submit">Deactivate Employee</button>
+                        <button class="btn btn-danger float-right" type="submit">Deactivate Student</button>
                         @else
                         <input type="hidden" name="status" value="1">
-                        <button class="btn btn-primary float-right" type="submit">Activate Employee</button>
+                        <button class="btn btn-primary float-right" type="submit">Activate Student</button>
                         @endif
                     </div>
                 </div>

@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-md-4 form-group">
                         <label for="item" class="req_fld">item</label>
-                        <input class="form-control" type="text" name="item"
+                        <input class="form-control" type="file" name="item"
                             value="{{old('item', $tute->item)}}">
                         @error('item')
                         <span class="text-danger small">{{$message}}</span>
@@ -42,10 +42,10 @@
             <div class="card-footer">
                 <div class="row">
                     <div class="col">
-                        <a href="{{ route('tutorial.index') }}" class="btn btn-info" type="button">Hello</a>
+                        <a href="{{ route('tutorial.index') }}" class="btn btn-info" type="button">Back</a>
                         <button class="btn btn-secondary" type="reset">Reset</button>
-                        <button class="btn btn-secondary" type="reset">Reset</button>
-                        <button class="btn btn-secondary" type="reset">Reset</button>
+                        {{-- <button class="btn btn-secondary" type="reset">Reset</button>
+                        <button class="btn btn-secondary" type="reset">Reset</button> --}}
                         <button class="btn btn-warning float-right" type="submit">Update</button>
                     </div>
                 </div>

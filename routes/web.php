@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/dashboard', [DashboardController::class, 'dashboard']);
     Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::resource("/feedback", FeedbackController::class);
 });
 Route::group(['middleware' => ['auth', 'auth.role:ADMIN']], function () {
     Route::get('employee', [EmployeeController::class, 'index'])->name('employee.index');
@@ -62,6 +63,13 @@ Route::group(['middleware' => ['auth', 'auth.role:ADMIN']], function () {
     Route::get('email/add', [EmailController::class, 'create'])->name('email.create');
     Route::post('email/store', [EmailController::class, 'store'])->name('email.store');
     Route::get('email/export', [EmailController::class, 'export'])->name('email.export');
+
+    Route::get('specialdocument', [SpecialDocument::class, 'index'])->name('specialdocument.index');
+    Route::get('specialdocument/add', [SpecialDocument::class, 'create'])->name('specialdocument.create');
+    Route::get('specialdocument/view', [PaymentController::class, 'show'])->name('specialdocument.show');
+    Route::post('specialdocument/store', [SpecialDocument::class, 'store'])->name('specialdocument.store');
+
+
 });
 Route::group(['midlware' => ['auth', 'auth.role:SM||ADMIN']], function () {
     Route::get('student', [StudentController::class, 'index'])->name('student.index');
@@ -73,6 +81,7 @@ Route::group(['midlware' => ['auth', 'auth.role:SM||ADMIN']], function () {
     Route::post('student/update', [StudentController::class, 'update'])->name('student.update');
     Route::get('student/destroy', [StudentController::class, 'destroy'])->name('student.destroy');
     Route::get('student/export', [StudentController::class, 'export'])->name('student.export');
+    Route::get('student/exportpdf', [StudentController::class, 'exportPDF'])->name('student.exportpdf');
 });
 Route::group(['midlware' => ['auth', 'auth.role:NM||ADMIN']], function () {
 
@@ -101,6 +110,7 @@ Route::group(['midlware' => ['auth', 'auth.role:TT||ADMIN']], function () {
     Route::post('tutorial/store', [TutorialController::class, 'store'])->name('tutorial.store');
     Route::post('tutorial/update', [TutorialController::class, 'update'])->name('tutorial.update');
     Route::get('tutorial/destroy', [TutorialController::class, 'destroy'])->name('tutorial.destroy');
+    Route::get('tutorial/export', [TutorialController::class, 'export'])->name('tutorial.export');
 });
 
 Route::group(['midlware' => ['auth', 'auth.role:PM||ADMIN']], function () {
@@ -110,15 +120,12 @@ Route::group(['midlware' => ['auth', 'auth.role:PM||ADMIN']], function () {
     Route::get('payment/view', [PaymentController::class, 'show'])->name('payment.show');
     Route::post('payment/store', [PaymentController::class, 'store'])->name('payment.store');
 
-    Route::get('specialdocument', [SpecialDocument::class, 'index'])->name('specialdocument.index');
-    Route::get('specialdocument/add', [SpecialDocument::class, 'create'])->name('specialdocument.create');
-    Route::get('specialdocument/view', [PaymentController::class, 'show'])->name('specialdocument.show');
-    Route::post('specialdocument/store', [SpecialDocument::class, 'store'])->name('specialdocument.store');
+
 });
 
 
 
-Route::group(['midlware' => ['auth', 'auth.role:T']], function () {
+Route::group(['midlware' => ['auth', 'auth.role:T||ADMIN']], function () {
 
     Route::get('teacher', [TeacherController::class, 'index'])->name('teacher.index');
     Route::get('teacher/add', [TeacherController::class, 'create'])->name('teacher.create');
@@ -198,7 +205,7 @@ Route::group(['midlware' => ['auth', 'auth.role:MM||ADMIN']], function () {
     Route::get('/subject/delete/{id}', [SubjectController::class, 'destroy']);
     Route::get('/subject/pdf', [SubjectController::class, 'createPDF']);
     Route::get('/subject/pdfShow', [SubjectController::class, 'pdfView']);
-    
+
     Route::post('/advertisement/create/', [AdvertisementController::class, 'create']);
     Route::post('/advertisement/update/{id}', [AdvertisementController::class, 'update']);
     Route::get('/advertisement/show', [AdvertisementController::class, 'show']);

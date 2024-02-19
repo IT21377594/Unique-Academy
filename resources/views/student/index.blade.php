@@ -38,7 +38,9 @@
                         <div class="col">
                             <a href="{{ url()->current() }}" class="btn btn-secondary" type="button">Reset</a>
                             <button class="btn btn-primary float-right" type="submit">Search</button>
-                            <a href="{{ route('student.export') }}" class="btn btn-info mr-2 float-right" type="button">Export Students</a>
+                            <a href="{{ route('student.exportpdf') }}" class="btn btn-info mr-2 float-right"
+                            type="button">Export students PDF</a>
+                            {{-- <a href="{{ route('student.export') }}" class="btn btn-info mr-2 float-right" type="button">Export Students</a> --}}
                         </div>
                     </div>
                 </div>

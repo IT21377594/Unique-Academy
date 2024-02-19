@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Models\Student;
 use App\Exports\StudentsExport;
 use Maatwebsite\Excel\Facades\Excel;
+use PDF;
 
 
 class StudentController extends Controller
@@ -40,6 +41,21 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $request->validate([
+            // 'photo'=>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'name'=>'required',
+            'email'=>'required|email',
+            'phone'=>'required|numeric|digits:10',
+            'grade'=>'required',
+            'address'=>'required',
+            'gender'=>'required',
+            'birthday'=>'required',
+            'password'=>'required',
+            'password_confirmation'=>'required|same:password'
+
+        ]);
+
+
         $emp = new User;
         $emp->name = $request->name;
         $emp->email = $request->email;
@@ -92,7 +108,7 @@ class StudentController extends Controller
 
 
 
-        return redirect()->route('student.index')->with('notify_message', ['status' => 'success', 'msg' => 'Employee Updated successfully!']);
+        return redirect()->route('student.index')->with('notify_message', ['status' => 'success', 'msg' => 'Student Updated successfully!']);
     }
 
     public function status(Request $request)
@@ -101,7 +117,7 @@ class StudentController extends Controller
         $emp->status = $request->status;
         $emp->save();
 
-        return redirect()->route('student.index')->with('notify_message', ['status' => 'success', 'msg' => 'Employee successfully ' . ($request->is_active ? 'Activated' : 'Deactivated') . '!']);
+        return redirect()->route('student.index')->with('notify_message', ['status' => 'success', 'msg' => 'Student successfully ' . ($request->is_active ? 'Activated' : 'Deactivated') . '!']);
     }
     public function destroy(Request $request)
     {
@@ -114,6 +130,14 @@ class StudentController extends Controller
     public function export() 
     {
         return Excel::download(new StudentsExport, 'students.xlsx');
+    }
+
+    public function exportPDF() 
+    {
+        $student = User::all();
+        $pdf = PDF::loadView('student.exports.pdf', compact('student'))->setOptions(['defaultFont' => 'sans-serif']);
+
+        return $pdf->download('students.pdf');;
     }
 
 

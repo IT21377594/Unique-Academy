@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4 form-group">
-                            <label for="name">SID</label>
+                            <label for="name">Name</label>
                             <input class="form-control" type="text" name="name" value="{{ request()->get('name') }}">
                         </div> 
 
@@ -41,10 +41,10 @@
                         <tr>
                             <th>#</th>
                             <!-- <th>StudentID</th> -->
-                            <th>StudentName</th>
-                            <th>Month</th>
-                            <th>Receipt</th>
-                            <th>Action</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>File</th>
+                            
                         </tr>
                     </thead>
                     <tbody>

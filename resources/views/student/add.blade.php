@@ -7,6 +7,7 @@
             <div class="card-header">
                 Details 
             </div>
+
             <form action="{{ route('student.store') }}" method="POST">
                 @csrf
                 <div class="card-body">
@@ -33,20 +34,30 @@
                             @error('password')
                                 <span class="text-danger small">{{ $message }}</span>
                             @enderror
-
-
                         </div>
+
                         <div class="col-md-4 form-group">
                             <label for="password_confirmation" class="req_fld">Confirm Password</label>
                             <input class="form-control" type="password" name="password_confirmation">
+                            @error('password_confirmation')
+                                <span class="text-danger small">{{ $message }}</span>
+                            @enderror
                         </div>
+
                         <div class="col-md-4 form-group">
                             <label for="phone" class="req_fld">Mobile</label>
-                            <input class="form-control" type="number" name="phone">
+                            <input class="form-control" type="number" name="phone" value="{{ old('phone') }}">
+                            @error('phone')
+                                <span class="text-danger small">{{ $message }}</span>
+                            @enderror
                         </div>
+
                         <div class="col-md-4 form-group">
                             <label for="address" class="req_fld">Address</label>
-                            <input class="form-control" type="text" name="address">
+                            <input class="form-control" type="text" name="address" value="{{ old('address') }}">
+                            @error('address')
+                                <span class="text-danger small">{{ $message }}</span>
+                            @enderror
                         </div>
 
                         <div class="col-md-4 form-group">
@@ -62,12 +73,21 @@
                         </div>
                         <div class="col-md-4 form-group">
                             <label for="birthday" class="req_fld">BirthDay</label>
-                            <input class="form-control" type="date" name="birthday">
+                            {{-- <input class="form-control" type="datetime-local" name="birthday" min="2004-01-01T00:00:00" max="{{ date('Y-m-d\TH:i:s', strtotime('-6 years')) }}"> --}}
+                            <input class="form-control" type="date" name="birthday" pattern="^20(0[4-9]|1[0-7])-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$" required>
+                        
+                            {{-- <input class="form-control" type="date" name="birthday" value="{{ old('birthday') }}"> --}}
+                            @error('birthday')
+                                <span class="text-danger small">{{ $message }}</span>
+                            @enderror
                         </div>
 
                         <div class="col-md-4 form-group">
                             <label for="grade" class="req_fld">Grade</label>
-                            <input class="form-control" type="number" name="grade">
+                            <input class="form-control" type="number" name="grade" value="{{ old('grade') }}">
+                            @error('grade')
+                                <span class="text-danger small">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="row">

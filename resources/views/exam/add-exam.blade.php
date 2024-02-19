@@ -4,7 +4,7 @@
 <div class="container" style="margin-left: 100px; margin-right: 20px">
         <div class="row">
             <div class="col-md-8">
-                <h4> Add Question  </h4>
+                <h4> Add Exam  </h4>
                 <br>
                 @if (Session::has('success'))
                     <div class="alert alert-success" role="alert">

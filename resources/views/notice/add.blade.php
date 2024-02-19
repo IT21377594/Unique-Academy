@@ -47,8 +47,10 @@
 
                         <div class="col-md-4 form-group">
                             <label for="email" class="req_fld">Description</label>
-                            <input class="form-control" type="textarea" name="n_description" value="{{ old('n_description') }}"
-                                autocomplete="off">
+                            <textarea  rows="4" cols="50" name="n_description" value="{{ old('n_description') }}"  autocomplete="off">
+                            </textarea>
+                            {{-- <input class="form-control" type="textarea" name="n_description" value="{{ old('n_description') }}"
+                                autocomplete="off"> --}}
                             @error('n_description')
                                 <span class="text-danger small">{{ $message }}</span>
                             @enderror

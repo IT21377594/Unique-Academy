@@ -14,6 +14,9 @@
                         <div class="col-md-6 form-group">
                             <label for="email" class="req_fld">Receiver Email</label>
                             <input class="form-control" type="text" name="email" >
+                            @error('email')
+                            <span class="text-danger small">{{ $message }}</span>
+                        @enderror
 
                         </div>
                     </div>
@@ -22,6 +25,9 @@
                             <label for="heading" class="req_fld">Heading</label>
                             <input class="form-control" type="text" name="heading" 
                                 autocomplete="off">
+                                @error('heading')
+                                <span class="text-danger small">{{ $message }}</span>
+                            @enderror
 
                         </div>
                    </div>
@@ -33,6 +39,10 @@
                             {{-- <input class="form-control" type="text" name="details" > --}}
                            
                             <textarea name="details" class="form-control" cols="30" rows="10"></textarea><br><br>
+
+                            @error('details')
+                            <span class="text-danger small">{{ $message }}</span>
+                        @enderror
 
                             <button class="btn btn-primary float-right" type="submit">Submit</button>
 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TutorialExport;
 use Illuminate\Http\Request;
 use App\Models\Tutorial;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TutorialController extends Controller
 {
@@ -25,6 +27,14 @@ class TutorialController extends Controller
     public function store(Request $request)
     {   
         //  dd($request->all());
+
+        $request->validate([
+            'date' => 'required|date|after:today',
+            'subject' => 'required',
+            'item' => 'required',
+        ]);
+
+
         
         $file = $request->file('item');
         $file_name = $file->hashName();
@@ -70,4 +80,10 @@ class TutorialController extends Controller
 
        return redirect()->route('tutorial.index');
    }
+
+   public function export() 
+   {
+       return Excel::download(new TutorialExport, 'tutorial.xlsx');
+   }
+
 }
